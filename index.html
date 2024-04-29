@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>photo editor app</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <div class="container disabled">
+      <h1>Light Craft</h1>
+      <hr />
+      <div class="auto-sized">
+        <div class="view_img" id="maskes">
+          <img src="one (2).png" alt="Workplace" usemap="#workmap" class="img_map" id = "img_src"/>
+          <div id = "layers" style="display: none;"></div>
+          <div name="workmap" id="boxes" class="boxes"> 
+            <div id="image_boxes" style="position: relative; display: none;">
+              <div class="boxes" id="main_img_box"></div>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" value="img_src" id="selected_mask" />
+      </div>
+
+      <div class="choose_img">
+        <button>choose Image <img src="images/upload.png" alt="" /></button>
+        <input type="file" name="" id="photo" accept="image/*" hidden />
+        <button id ="show_masks_info" disabled="true" class="show_masks_info">Show Masks</button>
+      </div>
+
+      <div class="slider">
+        <div class="filter_info">
+          <span class="name">brightness</span>
+          <span class="value">100%</span>
+        </div>
+        <input type="range" name="" id="" max="200" min="0" value="100" />
+      </div>
+      <div class="icons_filter">
+        <p>filters</p>
+        <div class="icons_room">
+          <button title="brightness" id="brightness" class="active">
+            <img src="images/brightnss.png" alt="" />
+          </button>
+          <button title="contrast" id="contrast">
+            <img src="images/contrast.png" alt="" />
+          </button>
+          <button title="saturate" id="saturate">
+            <img src="images/opactiy.png" alt="" />
+          </button>
+          <button title="invert" id="invert">
+            <img src="images/invert.png" alt="" />
+          </button>
+          <button title="blur" id="blur">
+            <img src="images/blur.png" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="icons_filter inactive" title="future plans">
+        <p>rotate & flip</p>
+        <div class="icons_room1">
+          <button title="rotate_left" id="rotate_left"><img src="images/rotateleft.png" alt="" /></button>
+          <button title="rotate_right" id="rotate_right"><img src="images/rotateright.png" alt="" /></button>
+          <button title="flip_x" id="flip_x"><img src="images/flip.png" alt="" /></button>
+          <button title="flip_y" id="flip_y"><img src="images/flip.png" alt="" /></button>
+        </div>
+      </div>
+
+      <div class="btn_contain">
+        <button class="reset">reset filter</button>
+        <button class="save" onclick="save_image()">save image</button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
